@@ -1,0 +1,17 @@
+/* pages/bind/bind.wxss */
+.portrait image{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50rpx;
+  margin: 50rpx;
+}
+.portrait{
+  display: flex;
+  flex-direction: row;
+  align-items:center; 
+}
+.head{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,6 @@
+<!--pages/publish/publish.wxml-->
+<view bindtap="uploadimage">请上传图片</view>
+<view class="container">
+  <image src="{{imageList[0]}}"></image>
+  <image wx:for="{{imageList}}" src="{{item}}"></image>
+</view>

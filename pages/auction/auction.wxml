@@ -1,0 +1,67 @@
+<!--pages/auction/auction.wxml-->
+<!--pages/auction/auction.wxml-->
+<view class="auction" bindtap="clickMe" data-nid="2">
+  <view class="title" >
+  <text>第三场 贵和祥茶道专场</text>
+  </view>
+
+  <view class="msg">
+    <view class="preview">
+    预览中
+    </view>
+    <view class="browse">
+    360次浏览
+    </view>
+  </view>
+
+  <view class="picture">
+  <image src="/static/image/baozi.jpg"></image>
+  </view>
+
+  <view class="detail">
+  <view class="detail-img">
+    <image src="/static/image/baozi.jpg"></image>
+    <image src="/static/image/baozi.jpg"></image>
+    <image src="/static/image/baozi.jpg"></image>
+    <image src="/static/image/baozi.jpg"></image>
+  </view>
+   
+    <view class="omit">
+    14拍品
+    </view>
+  </view>
+</view>
+
+
+<!---------------------------->
+
+<view class="auction" wx:for="{{auctionList}}" >
+  <view class="title" bindtap="clickMe"  data-nid="{{item.id}}">
+  <text>{{item.title}}</text>
+  </view>
+
+  <view class="msg">
+    <view class="preview" bindtap="clickMe"  data-nid="{{item.id}}">
+    {{item.state}}
+    </view>
+    <view class="browse">
+    {{item.viewCount}}次浏览
+    </view>
+  </view>
+
+  <view class="picture" bindtap="clickMe"  data-nid="{{item.id}}">
+  <image src="{{item.bigimage}}"></image>
+  </view>
+
+  <view class="detail" bindtap="clickMe"  data-nid="{{item.id}}">
+  <view class="detail-img">
+    <image wx:for="{{item.smallimageList}}" wx:for-item="itm" src="{{itm}}"></image>
+   
+  </view>
+   
+    <view class="omit">
+    {{item.Number}}拍品
+    </view>
+  </view>
+</view>
+

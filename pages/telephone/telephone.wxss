@@ -1,0 +1,5 @@
+/* pages/telephone/telephone.wxss */
+input{
+border: 20rpx;
+border-color: red;
+}

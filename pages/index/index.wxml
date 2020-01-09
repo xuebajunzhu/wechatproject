@@ -1,0 +1,46 @@
+<!--pages/index/index.wxml-->
+<view bindtap="clickMe" data-nid="123">点我跳转</view>
+<navigator url="/pages/detail/detail?nid=666">点我</navigator>
+<view class="title">
+  <view class="hello">
+    <image src="/static/image/hello.jpg"></image>
+    <text>精品文章</text>
+  </view>
+  <view class="hello">
+    <image src="/static/image/hello.jpg"></image>
+    <text>小视频</text>
+  </view>
+  <view class="hello">
+    <image src="/static/image/hello.jpg"></image>
+    <text>名人堂</text>
+  </view>
+  <view class="hello">
+    <image src="/static/image/hello.jpg"></image>
+    <text>观点说</text>
+  </view>
+
+</view>
+<view class="all-artical">
+<view class="left-artical">
+<view class="artical">
+  <image src="/static/image/luck.jpg"></image>
+  <view class="comment">
+  <text>
+  我是你爸爸哈哈哈哈哈哈
+  </text>
+  </view>
+</view>
+
+</view>
+<view class="right-article">
+  <view class="artical">
+    <image src="/static/image/hello.jpg"></image>
+    <view class="comment">
+    <text>
+    我发的撒哈哈哈
+    </text>
+    </view>
+  </view>
+</view>
+
+</view>

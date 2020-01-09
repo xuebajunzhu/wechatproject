@@ -1,0 +1,100 @@
+/* pages/home/home.wxss */
+
+/* pages/home/home.wxss */
+.head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #7FFF00;
+  color: white;
+}
+.head .register{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.head .register image{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50rpx; 
+}
+.head .register{
+  width: 300rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.head .hoempage{
+  background-color: 	#8FBC8F;
+  width: 300rpx;
+  height: 100rpx;
+  border-bottom-left-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  text-align: center;
+  line-height: center;
+}
+.head .head-first{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin:50rpx ;
+}
+.condition {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin:50rpx ;
+}
+.condition .condition-one{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pay-list image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+ .pay-list{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+
+} 
+.pay-list .pay-one{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.boder{
+  height: 10rpx;
+  background-color: #ddd;
+
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  margin:50rpx; 
+}
+.list .money{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50rpx 0;
+}
+.list .boder{
+  height: 3rpx;
+  background-color: #ddd;
+}
+.list .money .title{
+  font-weight: 800; 
+}
+.list .money .details{
+  color: #808080;
+}

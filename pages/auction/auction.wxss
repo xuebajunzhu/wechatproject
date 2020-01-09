@@ -1,0 +1,53 @@
+/* pages/auction/auction.wxss */
+/* pages/auction/auction.wxss */
+.auction{
+  display: flex;
+  flex-direction:column;
+  margin-top: 20rpx;
+  margin-bottom:20rpx;
+}
+.auction .title{
+  font-size: 50rpx;
+  font-style: italic; 
+  margin-bottom: 20rpx;
+}
+.auction .msg{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  font-size: 30rpx;
+  margin-bottom:20rpx;
+
+}
+.auction .msg .preview{
+  width: 100rpx;
+  background-color: green;
+  border-radius: 30rpx;
+  color: white;
+}
+.auction .msg .browse{
+  color: #808080;
+}
+.auction .detail image{
+  width: 20%;
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin-right:20rpx; 
+}
+.auction .detail .omit{
+  width: 30rpx;
+  height: 200rpx;
+  line-height: center; 
+  margin-right:20rpx; 
+}
+.auction .detail{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.auction .detail  .detail-img{
+  width: 700rpx;
+  display: flex;
+  flex-direction: row;
+}

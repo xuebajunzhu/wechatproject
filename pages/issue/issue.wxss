@@ -1,0 +1,62 @@
+/* pages/issue/issue.wxss */
+.article .media image{
+  height: 150rpx;
+  width: 150rpx;
+   margin: 50rpx 20rpx;
+}
+.article .media video{
+  height: 150rpx;
+  width: 150rpx;
+   margin: 50rpx 20rpx;
+}
+.upload image{
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 10rpx;
+  margin: 40rpx 20rpx;
+
+}
+.article textarea{
+  margin: 20rpx 30rpx;
+}
+.tag{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+}
+.tag .boder{
+  height: 5rpx;
+  background-color: #ddd;
+  margin: 0 20rpx;
+}
+.tag .topic{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50rpx 20rpx;
+}
+.tag .topic .title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.tag .topic .title .title-left{
+  display: flex;
+  flex-direction: row;
+  font-size: rpx;
+}
+.tag .topic .content-right{
+  font-size: 30rpx;
+  color: #808080;
+}
+
+.tag image{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 25rpx;
+}
+.sub{
+  background-color: #00FFFF
+}

@@ -1,0 +1,39 @@
+/* pages/index/index.wxss */
+.c1{
+  color: red
+}
+.title image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.title .hello{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.artical image{
+  width: 100%;
+}
+
+.artical{
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+
+.all-artical{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

@@ -1,0 +1,57 @@
+/* pages/information/information.wxss */
+/* pages/information/information.wxss */
+.title image{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 10rpx;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top:20rpx; 
+}
+
+.title .icon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:75rpx; 
+}
+
+.division{
+  height: 20rpx;
+  background-color:#ddd; 
+  margin-top:100rpx;
+  margin-bottom: 70rpx;
+  
+}
+
+.massage image{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 10rpx;
+}
+.massage .text{
+  height: 100%;
+  width: 700rpx;
+}
+.massage .text .row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+.massage .text .row .msg-label{
+}
+.massage .text .row .date{
+  color: #808080;
+}
+.massage {
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+}
+.massage .text .border{
+background-color: #ddd;
+height: 5rpx;
+}

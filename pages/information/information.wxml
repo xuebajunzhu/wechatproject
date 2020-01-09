@@ -1,0 +1,52 @@
+<!--pages/information/information.wxml-->
+
+<view class="title">
+  <view class="icon">
+    <image src="/static/image/shu.jpg"></image>
+    <text>赞和收藏</text>
+  </view>
+   <view class="icon">
+    <image src="/static/image/lab.jpg"></image>
+    <text>最近来访</text>
+  </view>
+   <view class="icon">
+    <image src="/static/image/fire.jpg"></image>
+    <text>评论和@</text>
+  </view>
+
+</view>
+
+<view class="division">
+</view>
+
+<view class="massage">
+  <view class="icon">
+    <image src="/static/image/fire.jpg"></image>
+  </view>
+  <view class="text">
+    <view class="row">
+      <text class="msg-label">系统消息</text>
+      <text class="date">2019-10-02</text>
+    </view>
+    <view class="msg">
+    <text>放大深度撒谎的撒回复第十八开发的晒发表</text>
+    <view class="border"></view>
+    </view>
+  </view>
+</view>
+
+<view class="massage">
+  <view class="icon">
+    <image src="/static/image/fire.jpg"></image>
+  </view>
+  <view class="text">
+    <view class="row">
+      <text class="msg-label">系统消息</text>
+      <text class="date">2019-10-02</text>
+    </view>
+    <view class="msg">
+    <text>放大深度撒谎发表</text>
+     <view class="border"></view>
+    </view>
+  </view>
+</view>

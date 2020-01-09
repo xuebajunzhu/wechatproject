@@ -1,0 +1,13 @@
+<!--pages/goods/goods.wxml-->
+<text>商品列表</text>
+<view>
+  <view wx:for="{{datalist}}" >{{index}}--{{item}}</view>
+  <view wx:for="{{datalist}}" wx:for-index="idx" wx:for-item="x">{{idx}}--{{x}}</view>
+
+
+  {{userinfo.name}}
+  {{userinfo.age}}
+
+  <view wx:for="{{userinfo}}">{{index}}---{{item}}</view>
+
+</view>

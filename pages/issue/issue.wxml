@@ -1,0 +1,51 @@
+<!--pages/issue/issue.wxml-->
+<view class="article">
+
+  <view class="media">
+    <image wx:for="{{imageList}}" src="{{item}}"></image>
+    <video wx:for="{{videoList}}" src="{{item}}"></video>
+  </view>
+  <view class="upload">
+    <image src="/static/image/picture.png" bindtap="loadimage"></image>
+    <image src="/static/image/video.png" bindtap="loadvideo"></image>
+  </view>
+  
+  <textarea class="textarea" placeholder="这一刻想说点什么">
+  </textarea>
+</view>
+
+<view class="tag">
+  <view class="topic">
+    <view class="title">
+       <view class="title-left" bindtap="getlocalpath">
+        <image src="/static/image/weizhi.png"></image>
+        <view class="content-left">所在位置 </view>
+      </view>
+    </view>
+    <view  class="content-right">{{location}}</view>
+  </view>
+      <view class="boder"></view>
+  <view class="topic">
+    <view class="title">
+      <view class="title-left">
+        <image src="/static/image/huati.png"></image>
+        <view  class="content-left">参与话题</view>
+      </view>
+    </view>
+    <view  class="content-right">选择合适话题会有更多赞   ></view>
+  </view>
+   <view class="boder"></view>
+  <view class="topic">
+    <view class="title">
+     <view class="title-left">
+        <image src="/static/image/tixing.png"></image>
+        <view  class="content-left">提醒谁看</view>
+       </view>
+    </view>
+    <view  class="content-right">你可以提醒关注的评优看的你的文  ></view>
+
+  </view>
+
+</view>
+
+<button class="sub">发布</button>

@@ -1,0 +1,51 @@
+<!--pages/detail/detail.wxml-->
+<view>
+  <image src="/static/image/baozi.jpg"></image>
+</view>
+
+<view class="topic">
+  <view class="title">
+    <view class="left">
+      <view class="title">第三十二场贵和祥春风祥鱼叉道具专场</view>
+      <view class="stateInfo">
+        <view class="state">已结束</view>
+        <view class="time">2020年1月03日 23:22</view>
+      </view>
+    </view>
+
+    <view class="share">
+      <image src="/static/image/share.png"></image>
+      <text>分享</text>
+    </view>
+  </view>
+  
+  <view class="info">
+    <text>拍品:16件</text>
+    <text>出价:100次</text>
+    <text>围观:5211次</text>
+  </view>
+  
+
+</view> 
+
+<view class="line"></view>
+
+<view class="detail">
+  <view class="">本期拍品</view>
+  <view class="line"></view>
+  <view class="auctionItem">
+    <view class="record">
+      <image src="/static/image/baozi.jpg"></image>
+      <view class="recordInfo">
+        <view class="title">出价记录 <text> | BIDS</text> </view>
+      </view>
+      <view class="bidder">
+        <text>23次出价</text>
+        <view class="portrait">
+          
+        </view>
+      </view>
+    </view>
+    <view class=""></view>
+  </view>
+</view>

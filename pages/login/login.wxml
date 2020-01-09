@@ -1,0 +1,8 @@
+<!--pages/login/login.wxml-->
+<view>用户名: {{name}}</view>
+
+<view class="head-image">用户头像 <image src="{{path}}"></image></view>
+
+<button open-type="getUserInfo" bindgetuserinfo="getuserinfo">点我登陆</button>
+
+<view bindtap="getlocalpath">位置: {{localpath}}</view>
