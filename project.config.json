@@ -127,6 +127,27 @@
 					"id": -1,
 					"name": "pages/detail/detail",
 					"pathName": "pages/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/auth/auth",
+					"pathName": "pages/auth/auth",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeModel/home",
+					"pathName": "pages/homeModel/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/homeModel/home",
+					"pathName": "pages/homeModel/home",
 					"scene": null
 				}
 			]

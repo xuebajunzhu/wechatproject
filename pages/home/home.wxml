@@ -5,9 +5,9 @@
   <view class="head-first">
   <view class="register">
     <image src="/static/image/证件照.jpg"></image>
-    <text>登录</text>
-    <text>|</text>
-    <text>注册</text>
+    <navigator url="/pages/auth/auth"> 
+     登录 | 注册
+    </navigator>
   </view>
 
   <view class="hoempage">
