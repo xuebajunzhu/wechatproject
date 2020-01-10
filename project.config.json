@@ -148,6 +148,20 @@
 					"id": -1,
 					"name": "pages/homeModel/home",
 					"pathName": "pages/homeModel/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/topic/topic",
+					"pathName": "pages/topic/topic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
 					"scene": null
 				}
 			]

@@ -1,0 +1,45 @@
+<!--pages/articledetial/detial.wxml-->
+<view class="author">
+  <view class="authorinfo">
+  <image src="{{articledetaile.author_avatarUrl}}"></image>
+    <view class="name">
+      <view class="nickName">{{articledetaile.author_name}}</view>
+      <view class="subTime">发布于 {{articledetaile.create_time}}</view>
+    </view>
+  </view>
+
+  <view>关注</view>
+</view>
+<view class="imageList"> 
+  <image wx:for="{{articledetaile.imageList}}" src="{{item}}"></image>
+</view>
+
+<view class="content">
+  {{articledetaile.content}}
+</view>
+
+<view class="topic">
+  {{articledetaile.topic}}
+</view>
+
+<view class="watch">
+  <view class="watch-counter">
+    {{articledetaile.browse_count}}
+  </view>
+  <view class="mention_user">
+    <image wx:for="{{articledetaile.mention_user}}" src="{{item}}"></image>
+  </view>
+</view>
+
+<view class="comment_count">
+  全部评论 · {{articledetaile.comment_count}}
+</view>
+
+<view class="comment">
+  <view class="commenter-avatarUrl">
+    <image src=""></image>
+  </view>
+  <view class="commenter">
+  
+  </view>
+</view>

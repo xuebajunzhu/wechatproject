@@ -1,37 +1,33 @@
-// pages/index/index.js
+// pages/articledetial/detial.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    articleList:[]
+    articledetaile:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+    var that= this;
+
+    console.log(options.id);
     wx.request({
-      url: 'http://127.0.0.1:8000/api/article/',
-      data:{},
-      method:"GET",
+      url: 'http://127.0.0.1:8000/api/articledetial/'+options.id+"/",
+      data: {},
+      method: "GET",
       dataType: 'json',
       success: function (res) {
         console.log(res.data);
-        that.setData({articleList: res.data});
+        that.setData({ articledetaile: res.data });
       },
 
     })
   },
-  showdetaile: function(res){
-    var id = res.currentTarget.dataset.id;
-    console.log(id);
-    wx.navigateTo({
-      url: '/pages/articledetial/detial?id='+id,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -79,20 +75,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  /*
-  *点击跳转
-  */
-  clickMe: function (e) {
-    var nid = e.currentTarget.dataset.nid;
-    console.log(nid);
-    wx.navigateTo({
-      url: '/pages/detail/detail',
-    })
   }
 })
-
-
-// 点击绑定的事件
-

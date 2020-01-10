@@ -22,22 +22,26 @@
 </view>
 <view class="all-artical">
 <view class="left-artical">
-<view class="artical">
-  <image src="/static/image/luck.jpg"></image>
+<view class="artical" wx:for="{{articleList}}" wx:if="{{index%2 === 0}}" bindtap="showdetaile" data-id="{{item.id}}">
+  <image src="{{item.cover_url}}"></image>
   <view class="comment">
+  <view>{{item.author_name}}</view>
+  <view>{{item.like_count}}次点赞</view>
   <text>
-  我是你爸爸哈哈哈哈哈哈
+  {{item.summary}}
   </text>
   </view>
 </view>
 
 </view>
 <view class="right-article">
-  <view class="artical">
-    <image src="/static/image/hello.jpg"></image>
+  <view class="artical" wx:for="{{articleList}}" wx:if="{{index%2 === 1}}">
+    <image src="{{item.cover_url}}"></image>
     <view class="comment">
+    <view>{{item.author_name}}</view>
+    <view>{{item.like_count}}次点赞</view>
     <text>
-    我发的撒哈哈哈
+    {{item.summary}}
     </text>
     </view>
   </view>

@@ -2,15 +2,15 @@
 <view class="article">
 
   <view class="media">
-    <image wx:for="{{imageList}}" src="{{item}}"></image>
-    <video wx:for="{{videoList}}" src="{{item}}"></video>
+    <image wx:for="{{imageList}}" src="{{item}}" bindtap="removeimage" data-index="{{index}}"></image>
+    <video wx:for="{{videoList}}" src="{{item}}" bindtap="removevideo" data-index="{{index}}"></video>
   </view>
   <view class="upload">
     <image src="/static/image/picture.png" bindtap="loadimage"></image>
     <image src="/static/image/video.png" bindtap="loadvideo"></image>
   </view>
   
-  <textarea class="textarea" placeholder="这一刻想说点什么">
+  <textarea class="textarea" placeholder="这一刻想说点什么" value="{{content}}" bindinput="contentInput">
   </textarea>
 </view>
 
@@ -25,14 +25,14 @@
     <view  class="content-right">{{location}}</view>
   </view>
       <view class="boder"></view>
-  <view class="topic">
+  <view class="topic" bindtap="getTopic">
     <view class="title">
-      <view class="title-left">
+      <view class="title-left" >
         <image src="/static/image/huati.png"></image>
-        <view  class="content-left">参与话题</view>
+        <view  class="content-left">{{topic.title}}</view>
       </view>
     </view>
-    <view  class="content-right">选择合适话题会有更多赞   ></view>
+    <view  class="content-right" wx:if="{{topic.title == '参与话题' }}">选择合适话题会有更多赞   ></view>
   </view>
    <view class="boder"></view>
   <view class="topic">
@@ -48,4 +48,4 @@
 
 </view>
 
-<button class="sub">发布</button>
+<button class="sub" bindtap="sub">发布</button>

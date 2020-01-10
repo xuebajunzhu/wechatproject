@@ -1,0 +1,9 @@
+<!--pages/topic/topic.wxml-->
+<view class="container">
+
+  <view class="item" wx:for="{{topicList}}" bindtap="choseTopic" data-item="{{item}}">
+    <text># {{item.title}}</text>
+    <text> {{item.count}} 关注</text>
+ </view>
+
+</view>

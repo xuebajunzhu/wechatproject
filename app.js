@@ -10,6 +10,17 @@ App({
     if (userinfo){
       this.globalData.userinfo = userinfo;
     }
+    wx.request({
+      url: "http://127.0.0.1:8000/api/login/",
+      data: this.globalData.userinfo,
+      method: 'GET',
+      dataType: 'json',
+      success: function (res) {
+        if (res.data.status) {
+          console.log(res);
+        }
+      }
+    })
     
 
   },

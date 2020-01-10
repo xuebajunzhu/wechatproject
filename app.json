@@ -12,7 +12,9 @@
     "pages/publish/publish",
     "pages/telephone/telephone",
     "pages/auth/auth",
-    "pages/homeModel/home"
+    "pages/homeModel/home",
+    "pages/topic/topic",
+    "pages/articledetial/detial"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ddd",

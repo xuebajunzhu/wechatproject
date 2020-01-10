@@ -1,0 +1,8 @@
+/* pages/topic/topic.wxss */
+
+.container .item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50rpx 20rpx;
+}

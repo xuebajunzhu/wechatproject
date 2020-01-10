@@ -79,7 +79,7 @@ Page({
   //登录
     wx.request({
       url: "http://127.0.0.1:8000/api/mssagecode/",
-      data: { phone: this.data.phone, code:this.data.code},
+      data: { phone: this.data.phone, code: this.data.code, nickName: e.detail.userInfo.nickName, avatarUrl: e.detail.userInfo.avatarUrl},
       method: 'POST',
       dataType: 'json',
       success: function (res) {
