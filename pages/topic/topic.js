@@ -6,10 +6,6 @@ Page({
    */
   data: {
     topicList:[
-      {id:1,title:"春节买不到票",count:200},
-      { id: 2, title: "春节买不到票", count: 200 },
-      { id: 3, title: "春节买不到票", count: 200 },
-      { id: 4, title: "春节买不到票", count: 200 }
     ]
   },
   choseTopic:function(e){
@@ -27,7 +23,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this
+    wx.request({
+      url: 'http://127.0.0.1:8000/api/topic/',
+      data: {},
+      method: 'GET',
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.results)
+        that.setData({ topicList: res.data.results})
+      },
+    })
   },
 
   /**

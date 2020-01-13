@@ -21,30 +21,30 @@
 
 </view>
 <view class="all-artical">
-<view class="left-artical">
-<view class="artical" wx:for="{{articleList}}" wx:if="{{index%2 === 0}}" bindtap="showdetaile" data-id="{{item.id}}">
-  <image src="{{item.cover_url}}"></image>
-  <view class="comment">
-  <view>{{item.author_name}}</view>
-  <view>{{item.like_count}}次点赞</view>
-  <text>
-  {{item.summary}}
-  </text>
-  </view>
-</view>
-
-</view>
-<view class="right-article">
-  <view class="artical" wx:for="{{articleList}}" wx:if="{{index%2 === 1}}">
-    <image src="{{item.cover_url}}"></image>
-    <view class="comment">
-    <view>{{item.author_name}}</view>
-    <view>{{item.like_count}}次点赞</view>
-    <text>
-    {{item.summary}}
-    </text>
+  <view class="left-artical">
+    <view class="artical" wx:for="{{articleList}}" wx:if="{{index%2 === 0}}" bindtap="showdetaile" data-id="{{item.id}}">
+      <image src="{{item.cover_url}}"></image>
+      <view class="comment">
+        <view>{{item.author_name}}</view>
+        <view>{{item.like_count}}次点赞</view>
+        <view>
+          {{item.summary}}
+        </view>
+      </view>
     </view>
   </view>
-</view>
+  
+  <view class="right-article">
+    <view class="artical" wx:for="{{articleList}}" wx:if="{{index%2 === 1}}" bindtap="showdetaile" data-id="{{item.id}}">
+      <image src="{{item.cover_url}}"></image>
+      <view class="comment">
+        <view>{{item.author_name}}</view>
+        <view>{{item.like_count}}次点赞</view>
+        <view>
+          {{item.summary}}
+        </view>
+      </view>
+    </view>
+  </view>
 
 </view>

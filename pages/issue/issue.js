@@ -118,6 +118,7 @@ Page({
   sub:function(e){
    
     var that = this;
+    console.log("11111111",that.data)
    
     wx.request({
       url: 'http://127.0.0.1:8000/api/issue/',
@@ -143,6 +144,9 @@ Page({
       content: "",
       topic: { title: "参与话题", topic_id: 0 }
     })
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
   },
   /**
    * 点击话题跳转页面
@@ -162,7 +166,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+   if (app.globalData.userinfo){
+     wx.navigateTo({
+       url: '/pages/telephone/telephone',
+     })
+   }
   },
 
   /**

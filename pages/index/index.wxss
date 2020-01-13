@@ -42,3 +42,7 @@
 .all-artical .left-artical{
   width: 350rpx;
 }
+.all-artical .right-article{
+  width: 350rpx;
+  height: auto;
+}

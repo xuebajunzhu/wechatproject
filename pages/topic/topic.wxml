@@ -3,7 +3,7 @@
 
   <view class="item" wx:for="{{topicList}}" bindtap="choseTopic" data-item="{{item}}">
     <text># {{item.title}}</text>
-    <text> {{item.count}} 关注</text>
+    <text> {{item.discussion_count}} 关注</text>
  </view>
 
 </view>
