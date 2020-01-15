@@ -19,6 +19,7 @@ Page({
     
     this.setData({ content: e.detail.value})
    
+   
     // console.log(e.detail.value);
   },
   getlocalpath:function(){
@@ -166,11 +167,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   if (app.globalData.userinfo){
-     wx.navigateTo({
-       url: '/pages/telephone/telephone',
-     })
-   }
+   
   },
 
   /**
@@ -184,7 +181,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    if (!app.globalData.userinfo) {
+      wx.navigateTo({
+        url: '/pages/auth/auth',
+      })
+    }
   },
 
   /**

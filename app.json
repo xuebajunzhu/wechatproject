@@ -14,7 +14,8 @@
     "pages/auth/auth",
     "pages/homeModel/home",
     "pages/topic/topic",
-    "pages/articledetial/detial"
+    "pages/articledetial/detial",
+    "pages/progress/progress"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ddd",
@@ -22,7 +23,7 @@
     "navigationBarTitleText": "cqk",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
-    "enablePullDownRefresh": false
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "selectedColor": "#FF0000",

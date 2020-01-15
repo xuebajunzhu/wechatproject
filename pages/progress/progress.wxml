@@ -1,0 +1,4 @@
+<!--pages/progress/progress.wxml-->
+<progress percent="20"></progress>
+<progress percent="30" color="red"></progress>
+<progress percent="40" activeColor="bule"></progress>

@@ -1,22 +1,18 @@
-// pages/home/home.js
-var app = getApp()
+// pages/progress/progress.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userinfo: null
+
   },
-  onClickLogout: function (e) {
-    app.logout();
-    this.setData({ userinfo: null })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -30,7 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({ userinfo: app.globalData.userinfo })
+
   },
 
   /**

@@ -7,11 +7,15 @@
       <view class="subTime">发布于 {{articledetaile.create_time}}</view>
     </view>
   </view>
-
-  <view class="care">关注</view>
+  <view class="care">关注</view>  
 </view>
-<view class="imageList"> 
-  <image wx:for="{{articledetaile.imageList}}" src="{{item}}"></image>
+<view class="imageList">
+  <swiper class='lunbo' indicator-dots='false' autoplay='true' interval='4000' circular="true">
+    <swiper-item wx:for="{{articledetaile.imageList}}">
+      <image src='{{item}}'></image>
+    </swiper-item>
+  </swiper>
+
 </view>
 
 <view class="content">
@@ -19,8 +23,7 @@
 </view>
 
 <view class="topic" wx:if="{{articledetaile.topic}}">
-  #
-  {{articledetaile.topic_title}}
+  # {{articledetaile.topic_title}}
 </view>
 
 <view class="watch">
@@ -37,11 +40,63 @@
   全部评论 · {{articledetaile.comment_count}}
 </view>
 
-<view class="comment">
+<view class="commentList" wx:for="{{articledetaile.commentinfo}}">
   <view class="commenter-avatarUrl">
-    <image src=""></image>
+    <image src="{{item.commentator_avatarUrl}}"></image>
   </view>
-  <view class="commenter">
-  
+  <view class="comment">
+    <view class="commentinfo">
+      <view class="comment_head">
+        <view class="commentor_info">
+          <view>{{item.commentator_nickName}}</view>
+          <view class="comment_data">{{item.comment_date}}</view>
+        </view>
+        <view class="operation">
+          <view>回复</view>
+          <view> · </view>
+          <image src=""></image>
+          <view wx:if="{{itm.like_count}}">{{itm.like_count}}</view>
+          <view wx:else>赞</view>
+        </view>
+      </view>
+      <view class="content">{{item.content}}</view>
+    </view>
+
+    <view class="replyList" wx:for="{{item.reply}}" wx:for-item="itm">
+
+
+      <view class="comment">
+        <view class="commentinfo">
+          <view class="comment_head">
+            <view class="commenter-avatarUrl">
+              <image src="{{itm.commentator_avatarUrl}}"></image>
+              <view class="commentor_info">
+                <view>{{itm.commentator_nickName}}</view>
+                <view class="comment_data">{{itm.comment_date}}</view>
+              </view>
+            </view>
+            <view class="operation">
+              <view>回复</view>
+              <view> · </view>
+              <image src=""></image>
+              <view wx:if="{{itm.like_count}}">{{itm.like_count}}</view>
+              <view wx:else>赞</view>
+            </view>
+          </view>
+          <view class="content">{{itm.content}}</view>
+        </view>
+      </view>
+      <view class="boder"></view>
+    </view>
   </view>
+  <view class="boder"></view>
 </view>
+
+
+
+
+<view class="text-input" >
+    <image class="big-avatar" src="{{articledetaile.author_avatarUrl}}"></image>
+    <input placeholder="说点什么..." bindinput="inputComment" data-news="{{articledetaile.article}}" data-depth="{{1}}" value="{{reply.content}}"></input>
+    <button bindtap="onClickPostComment">评论</button>
+  </view>

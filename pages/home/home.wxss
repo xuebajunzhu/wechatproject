@@ -25,14 +25,14 @@
   justify-content: space-between;
   align-items: center;
 }
-.head .hoempage{
+.head .homepage{
   background-color: 	#8FBC8F;
   width: 300rpx;
   height: 100rpx;
   border-bottom-left-radius: 30rpx;
   border-top-left-radius: 30rpx;
   text-align: center;
-  line-height: center;
+  line-height: 100rpx;
 }
 .head .head-first{
   display: flex;

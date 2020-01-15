@@ -3,14 +3,20 @@
 <!--pages/home/home.wxml-->
 <view class="head">
   <view class="head-first">
-  <view class="register">
+  <view class="register" wx:if="{{userinfo}}">
+    <image src="{{userinfo.avatarUrl}}"></image>
+    <navigator  bindtap="onClickLogout"> 
+     {{userinfo.nickName}}
+    </navigator>
+  </view>
+  <view class="register" wx:else>
     <image src="/static/image/证件照.jpg"></image>
-    <navigator url="/pages/auth/auth"> 
+    <navigator url="/pages/auth/auth" > 
      登录 | 注册
     </navigator>
   </view>
 
-  <view class="hoempage">
+  <view class="homepage">
   <text>查看个人主页</text>
   </view>
   </view>
