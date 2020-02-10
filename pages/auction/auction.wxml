@@ -42,25 +42,27 @@
 
   <view class="msg">
     <view class="preview" bindtap="clickMe"  data-nid="{{item.id}}">
-    {{item.state}}
+    {{item.status}}
     </view>
+    <view wx:if="{{item.status === '已结束'}}">{{item.end_time}} </view>
+    <view wx:else>开始时间  {{item.start_time}} </view>
     <view class="browse">
-    {{item.viewCount}}次浏览
+    {{item.onlook_count}}次浏览
     </view>
   </view>
 
   <view class="picture" bindtap="clickMe"  data-nid="{{item.id}}">
-  <image src="{{item.bigimage}}"></image>
+  <image src="{{item.image_url}}"></image>
   </view>
 
   <view class="detail" bindtap="clickMe"  data-nid="{{item.id}}">
   <view class="detail-img">
-    <image wx:for="{{item.smallimageList}}" wx:for-item="itm" src="{{itm}}"></image>
+    <image wx:for="{{item.commodity_image_list}}" wx:for-item="itm" src="{{itm}}"></image>
    
   </view>
    
     <view class="omit">
-    {{item.Number}}拍品
+    {{item.Commodity_count}}拍品
     </view>
   </view>
 </view>

@@ -1,15 +1,16 @@
 <!--pages/detail/detail.wxml-->
 <view>
-  <image src="/static/image/baozi.jpg"></image>
+  <image src="{{SaleCategory.image_url}}"></image>
 </view>
 
 <view class="topic">
   <view class="title">
     <view class="left">
-      <view class="title">第三十二场贵和祥春风祥鱼叉道具专场</view>
+      <view class="title">{{SaleCategory.title}}</view>
       <view class="stateInfo">
-        <view class="state">已结束</view>
-        <view class="time">2020年1月03日 23:22</view>
+        <view class="state">{{SaleCategory.status}}</view>
+        <view class="time" wx:if="{{SaleCategory.status ==='已结束' }}">{{SaleCategory.end_time}}</view>
+        <view class="time" wx:else>{{SaleCategory.start_time}}</view>
       </view>
     </view>
 
@@ -20,32 +21,59 @@
   </view>
   
   <view class="info">
-    <text>拍品:16件</text>
-    <text>出价:100次</text>
-    <text>围观:5211次</text>
+    <view>拍品: {{SaleCategory.commodity_count}}件</view>
+    <view>出价: {{SaleCategory.bid_count}}次</view>
+    <view>围观: {{SaleCategory.onlook_count}}次</view>
   </view>
   
-
 </view> 
 
-<view class="line"></view>
+<view class="lines"></view>
 
 <view class="detail">
   <view class="">本期拍品</view>
   <view class="line"></view>
-  <view class="auctionItem">
+  <view class="auctionItem" wx:for="{{SaleCategory.commodity}}" wx:key="index" bindtap="onclickgetdetaile" data-id="{{item.id}}">
     <view class="record">
-      <image src="/static/image/baozi.jpg"></image>
+    <view>{{item.browse_number}}次浏览</view>
+      <image src="{{item.image_url}}" ></image>
       <view class="recordInfo">
         <view class="title">出价记录 <text> | BIDS</text> </view>
       </view>
-      <view class="bidder">
-        <text>23次出价</text>
+      <view class="bidder" >
+        <text wx:if="{{SaleCategory.status==='已结束'}}">{{item.bid_count}}次出价</text>
+        <text wx:else>{{item.mark_up}}元/次</text>
         <view class="portrait">
-          
+          头像
         </view>
       </view>
     </view>
-    <view class=""></view>
+
+    <view class="content" >
+      <view class="title">{{item.title}}</view>
+      <view class="auction-price">
+        <view class="auction-price-title">
+          <view class="auction-price-text">
+          <text wx:if="{{SaleCategory.status==='已结束'}}">成交价 </text> 
+          <text wx:elif="{{SaleCategory.status==='拍卖中'}}">当前价 </text> 
+          <text wx:elif="{{SaleCategory.status==='预展中'}}">起拍价 </text> 
+          | <text>RMB</text> </view>
+          <view class="price" wx:if="{{item.bid_count}}">{{item.present_price}}</view>
+          <view class="price" wx:else>{{item.starting_price}}</view>
+        </view>
+        <view class="care" wx:if="{{item.care}}">已关注</view>
+         <view class="care" wx:else><image src="/static/image/fire.jpg"></image></view>
+      </view>
+      <view class="reference-price">
+        <view class="auction-price-title">
+          <view class="auction-price-text">市场参考价 | <text>PRICE</text> </view>
+          <view class="price">{{item.min_price}}-{{item.max_price}}</view>
+        </view>
+      </view>
+      <button class="bid" wx:if="{{SaleCategory.status==='已结束'}}">私洽</button>
+      <button class="bid" wx:else  bindtap="onclickpay" data-id="{{item.id}}">缴纳保证金</button>
+
+    </view>
+    <view class="lines"></view>
   </view>
 </view>

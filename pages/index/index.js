@@ -14,12 +14,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  getarticle:function(flag){
+  getarticle:function(){
     var that = this;
     var condition={}
-    if(!flag){
-      var min_id  = this.data.min_id;
-    }
+   
+    var min_id  = this.data.min_id;
+    
       wx.request({
         url: api.index,
         data: {min_id:min_id},
@@ -82,7 +82,7 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    this.getarticle(false)
+    this.getarticle()
   },
   showdetaile: function(res){
     var id = res.currentTarget.dataset.id;
@@ -130,7 +130,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getarticle(false)
+    this.getarticle()
   },
 
   /**

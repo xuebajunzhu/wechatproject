@@ -1,0 +1,75 @@
+<!--pages/deposit/deposit.wxml-->
+<view class="title">
+  <image src="{{cashdeposit.image_url}}"></image>
+  <view class="content">
+    <view class="title">{{cashdeposit.title}}</view>
+    <view class="starting_price">起拍价 {{cashdeposit.starting_price}}</view>
+    <view class=" reference-price">市场参考价{{cashdeposit.min_price}}-{{cashdeposit.max_price}}</view>
+  </view>
+</view>
+
+
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio-label">
+    <view>
+      <view>单场保证金 {{cashdeposit.cash_deposit}}</view>
+      <text>进对此拍品有效</text>
+    </view>
+    <radio class="radio" checked="{{true}}" value="{{2}}"></radio>
+   </label>
+ <view class="line"></view>
+    <label class="radio-label">
+      <view class="text">
+        <view>全场保证金 {{cashdeposit.global_cash_deposit}}</view>
+        <text>针对全场拍品有效</text>
+      </view>
+
+      <radio class="radio" value="{{1}}"></radio>
+    </label>
+</radio-group>
+<view class="lines"></view>
+<view class="warnning">
+  <view>
+    该拍品需要缴纳保证金   {{cashdeposit.cash_deposit}}
+  </view>
+  <view>
+    竞拍成功时,保证金可用于抵扣货款
+  </view>
+  <view>
+    竞拍结束其没有拍到竞品时,保证金将由系统操作原路返回到您缴纳保证金的账户,实际到账时间以个大银行为准
+  </view>
+</view>
+
+<view class="lines"></view>
+
+
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio-label">
+    <view>
+      <view>微信支付推荐</view>
+      <text>未拍到原路返回</text>
+
+    </view>
+      <radio class="radio"  checked="{{true}}" value="{{1}}"></radio>
+     
+   </label>
+ <view class="line"></view>
+    <label class="radio-label">
+      <view class="text">
+        <view>余额支付</view>
+        <text>可用余额 0</text>
+      </view>
+      <radio class="radio"  value="{{2}}"></radio>
+    </label>
+</radio-group>
+
+<view class="othor-pay">
+  <view>汇款或其他方式支付</view>
+  <button class="" >练习客服</button>
+</view>
+
+
+<view class="paynow">
+  <view>10000</view>
+  <button>立即支付</button>
+</view>

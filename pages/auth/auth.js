@@ -83,6 +83,7 @@ Page({
       method: 'POST',
       dataType: 'json',
       success: function (res) {
+        console.log(res)
         if (res.data.status) {
           // 登陆成功
           var localInfo={

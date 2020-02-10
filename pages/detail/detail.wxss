@@ -1,1 +1,145 @@
 /* pages/detail/detail.wxss */
+.topic{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.topic .title{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20rpx;
+}
+
+.topic .title .left{
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.topic .share image{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.topic .title .left .stateInfo{
+  display: flex;
+  flex-direction: row;
+
+}
+.topic .title .left .stateInfo .state{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;  
+  height: 50rpx;
+  width: 130rpx;
+  background-color:red;
+  color: white; 
+  border-radius:25rpx; 
+  font-size:30rpx; 
+  margin-right:30rpx; 
+}
+.topic .title .left .stateInfo .state .time{
+  font-size: 35rpx;
+}
+.share{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 25rpx;
+}
+.topic .info{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #808080
+}
+
+.lines{
+  height: 20rpx;
+  background-color: #ddd;
+  margin:  20rpx 0;
+}
+.detail .line{
+  height: 5rpx;
+  background-color: #ddd;
+  margin:  20rpx 0;
+}
+.auctionItem{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20rpx;
+}
+.auctionItem .record{
+  display: flex;
+  flex-direction: column;
+  border: 2rpx solid slategrey;
+  border-radius:20rpx; 
+}
+.auctionItem .record image{
+  width: 350rpx;
+}
+.recordInfo .title{
+  margin: 20rpx;
+  font-size:30rpx; 
+}
+.recordInfo .title text{
+  color: #ddd
+}
+
+.bidder{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 35rpx;
+  margin: 20rpx;
+}
+
+.content{
+  height: 700rpx;
+  width: 350rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 30rpx;
+}
+.content .title{
+  font-size: 45rpx;
+  color: rebeccapurple;
+  width: 100%;
+}
+.auction-price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.care image{
+  height: 50rpx;
+  width: 50rpx;
+  border-radius:10rpx; 
+}
+.auction-price-title{
+  display: flex;
+  flex-direction: column;
+}
+.auction-price-text{
+  font-size: 30rpx;
+}
+.auction-price-text text{
+  color: #ddd;
+}
+.bid{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  background-color: green;
+}

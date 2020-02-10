@@ -1,4 +1,4 @@
-// pages/detail/detail.js
+// pages/deposit/deposit.js
 var app = getApp()
 var sale = require("../../pages/url/url.js")
 Page({
@@ -7,45 +7,49 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userinfo:"",
-    SaleCategory:{}
-
+    cashdeposit:"",
+    id: null,
+    salecategory:null,
+    value:null,
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({userinfo:app.globalData.userinfo})
-    // console.log(options.id);
+    // console.log(options.detail.id)
+    // var id = options.detail.id
     wx.request({
-      url: sale.salecategory +"1/" ,
-      data: '',
+      url: sale.cashdeposit+"1/",
       header: {
-        Authorization: app.globalData.userinfo? app.globalData.userinfo.token : null
+        Authorization: app.globalData.userinfo.token
       },
       method: 'GET',
       dataType: 'json',
       responseType: 'text',
-      success: (res)=> {
+      success: (res) =>{
         console.log(res.data)
-        this.setData({ SaleCategory:res.data})
+        this.setData({ cashdeposit:res.data})
       },
-  
+     
     })
   },
-  onclickgetdetaile:function(e){
-    console.log(e);
-    var id = e.currentTarget.dataset.id;
-    console.log(id);
-
-  },
-  onclickpay:function(e){
-    console.log(e)
-    var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/deposit/deposit?id='+id,
-    })
+  radioChange:function(e){
+    console.log(e.detail.value)
+    var value = e.detail.value
+    if (value===2){
+      this.setData({
+        id: this.data.cashdeposit.id,
+        salecategory: this.data.cashdeposit.salecategory,
+        value:value
+      })
+    }else{
+      this.setData({
+        id: null,
+        salecategory: this.data.cashdeposit.salecategory,
+        value: value
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -1,22 +1,84 @@
 // pages/articledetial/detial.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    userinfo:"",
+    care:true,
     articledetaile:{},
     isShowCommentModal: false,
     reply: null // {news,reply,nickname,content,depth}
-   
   },
+  /**
+   * 点击关注
+   */
+  onclickCare:function(e){
+    if (!app.globalData.userinfo) {
+      wx.showToast({
+        title: '未登录',
+        icon: 'none',
+        success: function (res) {
+          wx.navigateTo({
+            url: '/pages/auth/auth',
+          })
+        },
+      })
+      return;
+    }
+    var author_id = e.currentTarget.setData.author_id;
+    wx.request({
+      url: '',
+      data: { author_id: author_id},
+      method: '',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
 
- 
+  },
+  /**
+   * 点赞
+   */
+  onclickLike:function(e){
+    if (!app.globalData.userinfo) {
+      wx.showToast({
+        title: '未登录',
+        icon: 'none',
+        success: function (res) {
+          wx.navigateTo({
+            url: '/pages/auth/auth',
+          })
+        },
+      })
+      return;
+    }
+
+
+  },
    /**
    * 点击并弹出评论对话框
    */
   onClickShowCommentModal: function (e) {
+    console.log(app.globalData.userinfo)
+    if (!app.globalData.userinfo){
+      wx.showToast({
+        title: '未登录',
+        icon: 'none',
+        success: function(res) {
+          wx.navigateTo({
+            url: '/pages/auth/auth',
+          })
+        },
+      })
+      return ;
+    }
     var replyInfo = e.currentTarget.dataset;
+    console.log(replyInfo)
     this.setData({
       isShowCommentModal: true,
       reply: replyInfo,
@@ -36,7 +98,7 @@ Page({
    */
   inputComment: function (e) {
     this.setData({
-      ["reply.content"]: e.detail.value
+      ["reply.content"]: e.detail.value,
     });
   },
 
@@ -77,6 +139,7 @@ Page({
     wx.request({
       url: "http://127.0.0.1:8000/api/comment/",
       data: this.data.reply,
+      header: { Authorization: app.globalData.userinfo.token},
       method: 'POST',
       dataType: 'json',
       responseType: 'text',
@@ -98,10 +161,10 @@ Page({
           */
           console.log(res.data);
           if (res.data.depth == 1) {
-            var commentList = this.data.news.comment.result;
+            var commentList = this.data.articledetaile.commentinfo.reply_comment;
             commentList.unshift(res.data);
             this.setData({
-              ["news.comment.result"]: commentList
+              ["articledetaile.commentinfo.reply_comment"]: commentList
             });
             return
           }
@@ -121,11 +184,10 @@ Page({
    */
   onLoad: function (options) {
     var that= this;
-
+    this.setData({userinfo:app.globalData.userinfo})
     console.log(options.id);
     wx.request({
-      url: 'http://127.0.0.1:8000/api/articledetial/'+options.id+"/",
-      data: {},
+      url: 'http://127.0.0.1:8000/api/article/'+options.id+"/",
       method: "GET",
       dataType: 'json',
       success: function (res) {

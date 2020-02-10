@@ -1,4 +1,5 @@
 <!--pages/articledetial/detial.wxml-->
+<view style="margin-bottom:200rpx">
 <view class="author">
   <view class="authorinfo">
     <image src="{{articledetaile.author_avatarUrl}}"></image>
@@ -7,12 +8,14 @@
       <view class="subTime">发布于 {{articledetaile.create_time}}</view>
     </view>
   </view>
-  <view class="care">关注</view>  
+  <view  wx:if="{{articledetaile.author_name == userinfo.nickName}}"></view>
+  <view class="care" bingtap="onclickCare" data-author_id="{{articledetaile.author_id}}" wx:elif="{{care}}">关注</view>
+  <view class="care" bingtap="onclickCancelCare" data-author_id="{{articledetaile.author_id}}" wx:else>取关</view>
 </view>
 <view class="imageList">
   <swiper class='lunbo' indicator-dots='false' autoplay='true' interval='4000' circular="true">
     <swiper-item wx:for="{{articledetaile.imageList}}">
-      <image src='{{item}}'></image>
+      <image src='{{item.url}}'></image>
     </swiper-item>
   </swiper>
 
@@ -23,7 +26,7 @@
 </view>
 
 <view class="topic" wx:if="{{articledetaile.topic}}">
-  # {{articledetaile.topic_title}}
+  # {{articledetaile.topic_title.title}}
 </view>
 
 <view class="watch">
@@ -32,7 +35,7 @@
     {{articledetaile.browse_count}}
   </view>
   <view class="mention_user">
-    <image wx:for="{{articledetaile.mention_user}}" src="{{item}}"></image>
+    <image wx:for="{{articledetaile.browse_user}}" src="{{item.avatarUrl}}" class="big-avatar"></image>
   </view>
 </view>
 
@@ -42,41 +45,57 @@
 
 <view class="commentList" wx:for="{{articledetaile.commentinfo}}">
   <view class="commenter-avatarUrl">
-    <image src="{{item.commentator_avatarUrl}}"></image>
+    <image src="{{item.commentator.avatarUrl}}"></image>
   </view>
   <view class="comment">
     <view class="commentinfo">
       <view class="comment_head">
         <view class="commentor_info">
-          <view>{{item.commentator_nickName}}</view>
+          <view>{{item.commentator.nickName}}</view>
           <view class="comment_data">{{item.comment_date}}</view>
         </view>
         <view class="operation">
-          <view>回复</view>
+          <view bindtap="onClickShowCommentModal" 
+          data-article="{{articledetaile.id}}" 
+          data-depth="{{2}}"
+          data-reply="{{item.id}}"
+          data-mention_user="{{item.commentator.id}}"
+          data-nickName="{{item.commentator.nickName}}"
+          data-root="{{articledetaile.id}}"
+          
+          >回复</view>
           <view> · </view>
           <image src=""></image>
           <view wx:if="{{itm.like_count}}">{{itm.like_count}}</view>
-          <view wx:else>赞</view>
+          <view wx:else bindtap="onclickLike" data-="">赞</view>
         </view>
       </view>
       <view class="content">{{item.content}}</view>
     </view>
 
-    <view class="replyList" wx:for="{{item.reply}}" wx:for-item="itm">
+    <view class="replyList" wx:for="{{item.reply_comment}}" wx:for-item="itm">
 
 
       <view class="comment">
         <view class="commentinfo">
           <view class="comment_head">
             <view class="commenter-avatarUrl">
-              <image src="{{itm.commentator_avatarUrl}}"></image>
+              <image src="{{itm.commentator.avatarUrl}}"></image>
               <view class="commentor_info">
-                <view>{{itm.commentator_nickName}}</view>
+                <view>{{itm.commentator.nickName}}</view>
                 <view class="comment_data">{{itm.comment_date}}</view>
               </view>
             </view>
             <view class="operation">
-              <view>回复</view>
+              <view bindtap="onClickShowCommentModal" 
+            data-article="{{articledetaile.id}}" 
+            data-depth="{{3}}"
+            data-reply="{{itm.id}}"
+            data-mention_user="{{itm.commentator.id}}"
+            data-nickName="{{itm.commentator.nickName}}"
+            data-root="{{articledetaile.id}}"
+              
+              >回复</view>
               <view> · </view>
               <image src=""></image>
               <view wx:if="{{itm.like_count}}">{{itm.like_count}}</view>
@@ -84,6 +103,8 @@
             </view>
           </view>
           <view class="content">{{itm.content}}</view>
+          <view class="content" style="color:red">点击获取更多评论</view>
+
         </view>
       </view>
       <view class="boder"></view>
@@ -93,10 +114,31 @@
 </view>
 
 
+</view>
 
-
-<view class="text-input" >
-    <image class="big-avatar" src="{{articledetaile.author_avatarUrl}}"></image>
-    <input placeholder="说点什么..." bindinput="inputComment" data-news="{{articledetaile.article}}" data-depth="{{1}}" value="{{reply.content}}"></input>
-    <button bindtap="onClickPostComment">评论</button>
+<view class="buttom-view">
+  <view class="comment-area" wx:if="{{isShowCommentModal}}">
+    <view class="top">
+      <image class="big-avatar" src="{{userinfo.avatarUrl}}"></image>
+      <text>评论</text>
+      <view class="reply" wx:if="{{reply.reply}}">回复 {{reply.nickname}}
+        <icon type="clear" size="15" bindtap="onClickClearReply"></icon>
+      </view>
+    </view>
+    <textarea fixed="true" placeholder="评论内容..." bindinput="inputComment"></textarea>
+    <view class="btn">
+      <view class="publish" bindtap="onClickPostComment">发布</view>
+    </view>
+    <view class="hide">
+      <icon type="cancel" size="30" bindtap="onClickCancelCommentModal"></icon>
+    </view>
   </view>
+  <view class="text-input" wx:else>
+    <image class="big-avatar" src="{{userinfo.avatarUrl}}"></image>
+    <input placeholder="说点什么..." bindtap="onClickShowCommentModal" 
+    data-article="{{articledetaile.id}}" 
+    data-depth="{{1}}"
+    
+    ></input>
+  </view>
+</view>

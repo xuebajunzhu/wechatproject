@@ -15,7 +15,8 @@
     "pages/homeModel/home",
     "pages/topic/topic",
     "pages/articledetial/detial",
-    "pages/progress/progress"
+    "pages/progress/progress",
+    "pages/deposit/deposit"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ddd",
@@ -26,6 +27,7 @@
     "enablePullDownRefresh": true
   },
   "tabBar": {
+    "custom": false,
     "selectedColor": "#FF0000",
     "list": [
       {
